@@ -1,0 +1,15 @@
+services:
+  wordpress:
+    image: bitnami/wordpress:6.4.3
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mariadb
+  mariadb:
+    image: bitnami/mariadb:10.6
+  phpmyadmin:
+    image: bitnami/phpmyadmin:5.2.1
+  proxy:
+    image: nginx:1.25
+    ports:
+      - "80:80"
